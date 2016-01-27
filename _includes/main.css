@@ -1,0 +1,56 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: cornflowerblue;
+  font-family: monospace;
+  font-size: 1.6em;
+  line-height: 1.4em;
+  height: 100%;
+}
+
+header, main {
+  background-color: aliceblue;
+  margin: 0 auto;
+  padding: 1em 2em;
+  width: 960px;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: black;
+  font-weight: 800;
+}
+
+**
+ * Code styles
+ */
+pre,
+code {
+    font-size: 15px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background-color: #eef;
+}
+
+code {
+    padding: 1px 5px;
+}
+
+pre {
+    padding: 8px 12px;
+    overflow-x: auto;
+}
+
+pre > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+}
