@@ -214,6 +214,10 @@ Using our control flow knowledge, we can just scrape that web page super easily!
 
 How can we do this? `curl example.com > example.html` should work great.
 
+Great, so now let's curl down the syllabus we've been using for this course, that way you can refer to it whenever you want or when you're practicing.
+
+This syllabus is online at [https://jeremiak.github.io/metro-cli-class](https://jeremiak.github.io/metro-cli-class). Using `curl` how can we download this file to our home directory and rename it to be `cli-class.html`?
+
 <a name="tricks"></a>
 
 ## Tricks you might want to know
