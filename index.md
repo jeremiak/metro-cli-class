@@ -237,3 +237,9 @@ There are also some handy keyboard shortcuts to make you a bit more productive. 
 Here are some great resources to help you get more comfortable with the command line.
 
 - [The Command Line Crash Course](http://cli.learncodethehardway.org/book/)
+- [Learn `git` in 15 minutes](https://try.github.io/levels/1/challenges/1)
+
+### Windows links
+
+- [15 Command line commands every Windows user should know](http://www.makeuseof.com/tag/15-cmd-commands-every-windows-user-know/)
+- [DOSPROMPT.info](http://dosprompt.info/)
