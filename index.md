@@ -23,7 +23,6 @@ Hey there, let's learn how to use the command line!
     0. `cat` and `grep`
     0. `apt-get` or `brew`
     0. `git`
-    0. `curl`
 0. [Some basic HTTP](#http)
 0. [Tricks you might want to know](#tricks)
 
