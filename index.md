@@ -18,13 +18,13 @@ Hey there, let's learn how to use the command line!
     0. Move things around or copy them
     0. Remove things, *carefully*
 0. [Wait, how am I supposed to remember all this?](#remember)
+0. [Control flow](#control)
 0. [Some basic HTTP](#http)
 0. [A few handy tools](#tools)
     0. `cat` and `grep`
     0. `curl`
     0. `apt-get` or `brew`
     0. `git`
-0. [Control flow](#control)
 0. [Tricks you might want to know](#tricks)
 
 <a name="yo"></a>
