@@ -1,6 +1,8 @@
 ---
 layout: default
+published: true
 ---
+
 
 Hey there, let's learn how to use the command line!
 
@@ -138,22 +140,37 @@ Use `man` to figure out what flag we pass to `ls` so that a slash is added after
 
 Another common, though not ubiquitous, way to get help is to use the `--help` flag with a command. For example, if you already have `git` installed you can use `git --help` to learn more about how to use it.
 
-<a name="http"></a>
-
-## Some basic HTTP
-
-
-<a name="tools"></a>
-
-## A few handy tools
-
-
 <a name="control"></a>
 
 ## Control flow
 
 - `&` and `&&`
 - `>`
+
+<a name="http"></a>
+
+## Some basic HTTP
+
+HTTP (hypertext transfer protocol) is one of the major transport mechanisms for data on the web. It is what browers use (that's why there's that weird `http://` or `https://` in the URLs you visit) to get webpages from remote servers. The very basics of HTTP are that you need a URL to request and you can use an "HTTP verb" to indiciate the type of request. There are four major HTTP verbs that we use on the web:
+
+0. `GET` for getting (reading) information
+0. `POST` for creating information on the server
+0. `PUT` for updating information on the server
+0. `DELETE` for (surprise!) deleting information on the server
+
+Generally speaking, your browser makes `GET` requests to which the server generally returns HTML or JSON. `GET` is sort of the default method when talking about HTTP, but comes the limitiation that data isn't generally created on the server in response.
+
+On your command line you can use the `curl` command to make HTTP requests, which will be `GET` by default.
+
+For example, go ahead and try `curl example.com`. What happens?
+
+Using our control flow knowledge, we can just scrape that web page super easily! Let's put the HTML from our `curl` command above into a page called `example.html`.
+
+How can we do this? `curl example.com > example.html` should work great.
+
+<a name="tools"></a>
+
+## A few handy tools
 
 <a name="tricks"></a>
 
