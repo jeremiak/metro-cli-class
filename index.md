@@ -19,12 +19,12 @@ Hey there, let's learn how to use the command line!
     0. Remove things, *carefully*
 0. [Wait, how am I supposed to remember all this?](#remember)
 0. [Control flow](#control)
-0. [Some basic HTTP](#http)
 0. [A few handy tools](#tools)
     0. `cat` and `grep`
-    0. `curl`
     0. `apt-get` or `brew`
     0. `git`
+    0. `curl`
+0. [Some basic HTTP](#http)
 0. [Tricks you might want to know](#tricks)
 
 <a name="yo"></a>
@@ -154,13 +154,44 @@ We use the single ampersand when we want the task to be moved to the background 
 
 The flow of data is also under our control using the `>` operator. It kind of looks like exactly what it does. It takes a stream of data and puts it somewhere else, generally a file. So let's say you wanted to list the contents of your home directory in a file to send to tech support, we could something like this: `ls ~ > ~/listing.txt`
 
-Use `man`, `ls`, and the `>` to generate a file called `stuff.txt` in your home directory. Once you've confirmed that the file is there with the proper contents, make sure to delete the text file. We don't want anybody seeing all the secrets of your home directory.
+Use `man`, `ls`, and the `>` to generate a file called `stuff.txt` in your home directory.
+
+We can also pipe data from one command to the next so that the output of one command forms the basis for the input of another with the `|` operator. This can be pretty helpful, but I'm going to give you one good example that will immediately be useful. If we pipe the output to the `less` command it will give us a nice interface through which to read very, very long data streams.
+
+For example, let's say we wanted to slowly page through the entire listing of the computer. We can use `ls -R / | more` so that we can slowly read the file using the arrow keys (or `vi` shortcuts if that's your thing). To get out of that view, just press `q`.
 
 To recap:
 
 - `&&` - chain commands together, a command will be executed when the one before it has finished
 - `&` - run a command in the background and return/finish immediately
-- `>` - pipe the output to a file
+- `>` - output to a file
+- `|` - pipe commands together
+
+<a name="tools"></a>
+
+## A few handy tools
+
+### `cat` and `grep`
+
+These are some pretty helpful, standard tools for interrogating textual data. `cat` (catenate, even though that really doesn't help in this case) shows us the data that is inside of a file. Let's take a look at that `stuff.txt` file we created just a minute ago. Since its in our home directory, we should be able to see it with `cat ~/stuff.txt`. What do you see when you do that? Remember, with long text files like this we probably want to use `| more` so that hundreds of lines of text don't immediately get printed to the screen.
+
+We learned that we can use the `|` and `more` to read through text but what if we're just looking for something in particular? Computers are really good at searching large bodies of text, way better than humans are. So let's put our computers to work.
+
+We'll be using the `grep` (globally search a regular expression and print) command along with the pipe operator. For example, let's say we want to see if there's a file named `stuff.txt` and one named `nowhere.txt` in our home directory.
+
+First, we can list all the contents of our home directory and then pipe that to the grep command with a string to search with. You can actually use regular expressions here, but that's a topic worthy of a whole other class. To be honest, I've been programming computers for years and I still have to read regular expression documentation.
+
+What does `ls ~ | grep stuff.txt` output? What does `ls ~ | grep nowhere.txt` output? Why do you think they're different and what does it mean? What commands could we have used instead of `ls ~` in this case?
+
+Now that we're all done with the `stuff.txt`, let's make sure to remove it since it contains an itemized listing of all of the contents of your home directory.
+
+### Install new tools with `apt-get` or `brew`
+
+In this command line environment we also have something very akin to an app store. We call them repositories, generally, and it will vary from operating system to operating system. On Mac, the best tool to use is [`brew`](http://brew.sh/) which you'll have to install yourself.
+
+On lots of Linux distributions you should be able to immediately use `apt-get`. Go ahead and run `apt-get` to see if the command is installed. In general, if you want to see if a command is installed you can try and run it or you can use `which <command>`. In this case, `which apt-get`.
+
+We're not going to install anything with these tools but they provide a clear and repeatable way to get your system set up. They also remove lots of the pain dealing with "dependency management", which is the commands that a particular command relies on.
 
 <a name="http"></a>
 
@@ -183,12 +214,6 @@ Using our control flow knowledge, we can just scrape that web page super easily!
 
 How can we do this? `curl example.com > example.html` should work great.
 
-<a name="tools"></a>
-
-## A few handy tools
-
-
-
 <a name="tricks"></a>
 
 ## Tricks you might want to know
@@ -203,6 +228,7 @@ There are also some handy keyboard shortcuts to make you a bit more productive. 
 - Control-A moves the cursor to the beginning of the line
 - Control-E moves the cursor to the end of the line
 - Control-R allows you to search through the previous commands
+- Control-L clears your screen and presents you with a fresh prompt
 
 ## Keep on learning
 
