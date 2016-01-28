@@ -144,8 +144,23 @@ Another common, though not ubiquitous, way to get help is to use the `--help` fl
 
 ## Control flow
 
-- `&` and `&&`
-- `>`
+One really great thing about the command line is that you get to control the flow of data between commands and files at a pretty granular level. In technical parlance, this is called streaming but I think its easiest to think about flow.
+
+First let's learn about chaining commands together. For example, what if you wanted to go to the root directory and then list all of the files there with a single command? We can join commands together with the `&` character. Sometimes we'll see it as a single `&` and other times it will be `&&`. These mean pretty different things.
+
+The double ampersand means that you want the commands to be executed in sequential order, with a given command only being executed after the one before it has finished. In this case we can easily chain our `cd` and `ls` commands like such: `cd / && ls -al .`
+
+We use the single ampersand when we want the task to be moved to the background immediately and the next command to be issued. This one is a bit more advanced than the double ampersand so I'd stick with `&&` for now.
+
+The flow of data is also under our control using the `>` operator. It kind of looks like exactly what it does. It takes a stream of data and puts it somewhere else, generally a file. So let's say you wanted to list the contents of your home directory in a file to send to tech support, we could something like this: `ls ~ > ~/listing.txt`
+
+Use `man`, `ls`, and the `>` to generate a file called `stuff.txt` in your home directory. Once you've confirmed that the file is there with the proper contents, make sure to delete the text file. We don't want anybody seeing all the secrets of your home directory.
+
+To recap:
+
+- `&&` - chain commands together, a command will be executed when the one before it has finished
+- `&` - run a command in the background and return/finish immediately
+- `>` - pipe the output to a file
 
 <a name="http"></a>
 
@@ -171,6 +186,8 @@ How can we do this? `curl example.com > example.html` should work great.
 <a name="tools"></a>
 
 ## A few handy tools
+
+
 
 <a name="tricks"></a>
 
